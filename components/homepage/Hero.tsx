@@ -12,7 +12,7 @@ const Hero = ({ content }: HeroSectionInterface) => {
     return (
         <section className="bg-foreground relative text-white">
             <div className="flex md:min-h-[800px] lg:min-h-auto h-screen max-h-[720px] 3xl:max-h-[880px]">
-                <Image width={content.image.width} height={content.image.height} alt={content.image.alt} src={content.image.url} loading="eager" className="w-full h-auto object-cover" fetchPriority="high" />
+                <Image fill alt={content.image.alt} src={content.image.url} loading="eager" className="w-full h-auto object-cover" fetchPriority="high" />
             </div>
             <div className="absolute bottom-10 left-0 lg:bottom-auto lg:top-1/2 lg:left-1/2 lg:-translate-1/2 z-2 container flex flex-col gap-5 lg:max-w-fit">
                 <div className="flex flex-col gap-5">
