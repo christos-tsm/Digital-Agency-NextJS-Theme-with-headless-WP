@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #E8E8E8;
+  --foreground: #10171E;
+  --primary: #DF203E;
+  --primary-darken: #b71c34;
+  --default-font-family: var(--font-manrope);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-darken: var(--primary-darken);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --breakpoint-3xl: 105rem;
+  --breakpoint-4xl: 120rem;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-titillium);
+}
+
+html[lang="el"] body {
+  font-family: var(--font-manrope);
+}
+
+::selection {
+  @apply text-white bg-primary;
+}
+
+
+.cta {
+  @apply inline-flex px-4 py-2 rounded-md items-center gap-2 text-sm font-medium;
+}
+
+.cta--primary {
+  @apply bg-primary text-white hover:bg-primary-darken transition-colors duration-300;
+}
+
+.cta--icon {
+  @apply inline-flex w-[18px] h-[18px] p-0 [&>svg]:w-full [&>svg]:h-full;
+}
+
+.cta--arrow {
+  @apply bg-primary text-white pl-1 py-1 hover:bg-primary-darken transition-colors duration-300;
+}
+
+.cta-arrow-container {
+  @apply bg-foreground text-white w-10 h-10 inline-flex justify-center items-center [&>svg]:w-5 [&>svg]:h-5 rounded;
+}
+
+.editor-text-primary {
+  @apply text-primary;
+}
+
+.section-title {
+  @apply text-primary text-sm lg:text-base font-bold;
+}
+
+.section-subtitle {
+  @apply text-foreground text-xl lg:text-2xl xl:text-4xl font-bold;
+}
+
+
+@utility container {
+  @apply px-4 lg:px-5 max-w-full xl:max-w-[90rem];
+}
+
+#nprogress .bar {
+  background: #df203e !important;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  box-shadow: 0 0 10px #df203e, 0 0 5px #df203e !important;
 }
