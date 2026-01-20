@@ -1,4 +1,4 @@
-import { locales, type Locale, defaultLocale } from "@/middleware";
+import { locales, type Locale, defaultLocale } from "@/types/locale";
 
 export function isValidLocale(locale: string): locale is Locale {
     return locales.includes(locale as Locale);

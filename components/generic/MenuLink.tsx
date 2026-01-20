@@ -1,5 +1,5 @@
 import { convertWpUrlToLocalizedPath } from "@/lib/utils/get-localized-path";
-import { Locale } from "@/middleware";
+import { Locale } from "@/types/locale";
 import { MenuItem } from "@/types/menu";
 import Link from "next/link";
 

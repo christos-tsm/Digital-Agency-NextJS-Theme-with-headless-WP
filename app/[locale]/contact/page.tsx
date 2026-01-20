@@ -16,8 +16,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function Contact({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const slug = locale === 'el' ? 'contact' : 'contact-en';
-    const pageData: ContactPageDataInterface = await getPageWithACFByLang(slug, locale);
+    const pageData: ContactPageDataInterface | null = await getPageWithACFByLang(slug, locale);
     const siteOptions: ACFOptions = await getACFOptions();
+
+    if (!pageData || !pageData.acf) {
+        return (
+            <LocomotiveScrollWrapper>
+                <div className="container mx-auto my-20 text-center">
+                    <h1 className="text-2xl font-bold mb-4">{locale === 'el' ? 'Η σελίδα δεν βρέθηκε' : 'Page not found'}</h1>
+                    <p>{locale === 'el' ? 'Δεν ήταν δυνατή η φόρτωση των δεδομένων.' : 'Unable to load page data.'}</p>
+                </div>
+            </LocomotiveScrollWrapper>
+        );
+    }
+
     const { acf: { hero_section } } = pageData;
 
     return (

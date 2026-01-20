@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getACFOptions } from "@/lib/wordpress/api";
 import { ACFOptions } from "@/types/acf";
 import LanguageSwitcher from "../LanguageSwitcher";
-import { Locale } from "@/middleware";
+import { Locale } from "@/types/locale";
 import { CircleX, Logs, MenuIcon, X } from "lucide-react";
 import MobileMenu from "../MobileMenu";
 import HeaderClientWrapper from "../HeaderClientWrapper";

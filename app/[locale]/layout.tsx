@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Manrope, Titillium_Web } from "next/font/google";
 import "../globals.css";
-import { locales, type Locale } from "@/middleware";
+import { locales, type Locale } from "@/types/locale";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
-import { Next13ProgressBar, Next13ProgressProps } from "next13-progressbar";
 import Providers from "@/components/Providers";
 import { generatePageMetadata as generateMetadataHelper } from "@/lib/utils/generate-metadata";
 

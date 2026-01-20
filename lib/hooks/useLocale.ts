@@ -1,7 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { type Locale, locales, defaultLocale } from '@/middleware';
+import { type Locale, locales, defaultLocale } from '@/types/locale';
 
 /**
  * Custom hook to get the current locale

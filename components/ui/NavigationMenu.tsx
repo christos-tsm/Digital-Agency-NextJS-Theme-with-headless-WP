@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { getMenuByLocationWithHierarchy } from '@/lib/wordpress/api'
 import { convertWpUrlToLocalizedPath } from '@/lib/utils/get-localized-path'
 import type { MenuItem } from '@/types/menu'
-import type { Locale } from '@/middleware'
+import type { Locale } from '@/types/locale'
 import { MenuLink } from "../generic/MenuLink"
 
 interface NavigationMenuProps {

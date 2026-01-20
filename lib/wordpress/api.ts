@@ -58,9 +58,23 @@ export async function getPostsOptimized() {
 
 // Endpoint 1: Get all ACF options
 export async function getACFOptions() {
-    return fetchCustomAPI('options', {
-        next: { revalidate: 3600 }, // Cache for 1 hour
-    });
+    try {
+        return await fetchCustomAPI('options', {
+            next: { revalidate: 3600 }, // Cache for 1 hour
+        });
+    } catch (error) {
+        console.error('Error fetching ACF options:', error);
+        // Return a minimal fallback object to prevent build failures
+        return {
+            logo: { url: '', alt: '' },
+            email: '',
+            tel: '',
+            social_media: [],
+            footer_text_el: '',
+            footer_text_en: '',
+            contact: {}
+        };
+    }
 }
 
 // Endpoint 2: Get page with all ACF fields by slug
@@ -80,9 +94,14 @@ export async function getSpecificOptionsPage(pageName: string) {
 // Polylang functions
 // Get page with ACF by slug and language
 export async function getPageWithACFByLang(slug: string, lang: string = 'el') {
-    return fetchCustomAPI(`page-acf/${slug}?lang=${lang}`, {
-        next: { revalidate: 60 },
-    });
+    try {
+        return await fetchCustomAPI(`page-acf/${slug}?lang=${lang}`, {
+            next: { revalidate: 60 },
+        });
+    } catch (error) {
+        console.error(`Error fetching page with ACF (${slug}, ${lang}):`, error);
+        return null;
+    }
 }
 
 // Get post by slug and language

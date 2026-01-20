@@ -3,7 +3,7 @@ import { sanitizeHTML } from "@/lib/utils/sanitize-html"
 import PrimaryCTA from "../PrimaryCTA"
 import Link from "next/link"
 import Image from "next/image"
-import { type Locale } from "@/middleware"
+import { type Locale } from "@/types/locale"
 
 interface ServiceCardInterface {
     service: ServicesPostItem;

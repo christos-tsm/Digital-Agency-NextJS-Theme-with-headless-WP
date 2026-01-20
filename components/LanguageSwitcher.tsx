@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getLocaleName } from '@/lib/i18n';
-import { locales, type Locale } from '@/middleware';
+import { locales, type Locale } from '@/types/locale';
 import { Globe } from "lucide-react";
 
 interface LanguageSwitcherProps {

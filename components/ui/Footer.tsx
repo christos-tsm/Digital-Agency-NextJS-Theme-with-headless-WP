@@ -1,6 +1,6 @@
 import { sanitizeHTML } from "@/lib/utils/sanitize-html";
 import { getACFOptions, getMenuByLocation } from "@/lib/wordpress/api";
-import { Locale } from "@/middleware";
+import { Locale } from "@/types/locale";
 import { ACFOptions } from "@/types/acf";
 import Image from "next/image";
 import Link from "next/link";

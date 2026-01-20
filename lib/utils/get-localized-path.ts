@@ -1,4 +1,4 @@
-import type { Locale } from "@/middleware";
+import type { Locale } from "@/types/locale";
 
 const WP_BASE_URL = process.env.WORDPRESS_URL || '';
 
