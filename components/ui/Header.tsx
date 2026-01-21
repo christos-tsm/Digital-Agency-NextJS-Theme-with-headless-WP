@@ -39,7 +39,7 @@ const Header = async ({ locale }: { locale: Locale }) => {
             <header className="absolute top-0 left-0 w-full py-2 md:py-4 z-10 border-b border-b-white/10">
                 <div className="container mx-auto flex items-center justify-between">
                     <div className="flex-1 max-w-[200px] flex">
-                        <Link href={'/'} aria-label="Logo">
+                        <Link href={locale === 'el' ? '/' : '/en/'} aria-label="Logo">
                             <Image src={siteOptions.logo.url} width={141} height={45} alt={siteOptions.logo.alt} className="w-[141px] h-[45px]" />
                         </Link>
                     </div>

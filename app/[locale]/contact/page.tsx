@@ -45,7 +45,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
                 </div>
                 <div className="flex flex-col items-start gap-2 md:gap-5 rounded">
                     <h3 className="font-bold text-lg flex items-center gap-5 w-full">
-                        <span className="min-w-fit">Τηλέφωνο</span>
+                        <span className="min-w-fit">{locale === 'el' ? 'Τηλέφωνο' : 'Phone'}</span>
                         <span className="h-0.5 bg-primary w-full"></span>
                     </h3>
                     <a href={`tel:${siteOptions.tel}`} className="text-sm md:text-base font-bold">{siteOptions.tel}</a>

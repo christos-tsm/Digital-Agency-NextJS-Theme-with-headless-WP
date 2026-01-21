@@ -30,7 +30,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     return (
         <LocomotiveScrollWrapper>
             <Hero content={hero} />
-            <Marquee>
+            <Marquee speed={.6}>
                 {marquee_text}
             </Marquee>
             <About content={about_us} />

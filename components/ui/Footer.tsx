@@ -16,7 +16,7 @@ const Footer = async ({ locale }: { locale: Locale }) => {
     return (
         <>
             <footer className="flex flex-col">
-                <Contact content={siteOptions.contact} />
+                <Contact content={siteOptions.contact} locale={locale} />
                 <div className="bg-foreground text-white pt-10 xl:pt-20 pb-10">
                     <div className="container mx-auto flex flex-col md:flex-row gap-10">
                         <div className="flex flex-2 flex-col gap-2">

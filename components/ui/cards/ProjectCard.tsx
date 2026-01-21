@@ -18,7 +18,7 @@ const ProjectCard = ({ project, imageContainerClassName = 'h-[300px] md:h-[700px
     const locale = useLocale();
     return (
         <article id={`project-${project.ID}`} className={`group relative flex! flex-col swiper-slide overflow-hidden rounded-2xl ${projectCardClassName}`}>
-            <Link href={`/projects/${project.post_name}`} aria-label={`${locale === 'el' ? `δείτε περισσότερα για ${project.post_title}` : `See more about ${project.post_title}`}`} className="absolute top-1/2 left-1/2 -translate-1/2 w-20 h-20 bg-primary text-white inline-flex justify-center items-center z-3 rounded-full opacity-0 transition-opacity group-hover:opacity-100 duration-700">
+            <Link href={`/${locale}/projects/${project.post_name}`} aria-label={`${locale === 'el' ? `δείτε περισσότερα για ${project.post_title}` : `See more about ${project.post_title}`}`} className="absolute top-1/2 left-1/2 -translate-1/2 w-20 h-20 bg-primary text-white inline-flex justify-center items-center z-3 rounded-full opacity-0 transition-opacity group-hover:opacity-100 duration-700">
                 <span className="inline-flex">
                     <CircleArrowOutUpRight />
                 </span>

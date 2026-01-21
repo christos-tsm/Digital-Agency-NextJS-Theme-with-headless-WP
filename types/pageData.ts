@@ -128,3 +128,30 @@ export interface ContactPageDataInterface {
         hero_section: DefaultHeroSectionData;
     }
 }
+
+export interface ProjectSinglePageDataInterface {
+    title: string;
+    slug: string;
+    acf: {
+        title: string;
+        intro_text: string;
+        gallery_source: {
+            formatted_value: string[]
+        }
+        after_gallery_text: string;
+        live_url?: string;
+    };
+    yoast_head_json?: {
+        title?: string;
+        description?: string;
+        og_title?: string;
+        og_description?: string;
+        og_image?: Array<{ url?: string; width?: number; height?: number }>;
+        twitter_card?: string;
+        canonical?: string;
+    };
+    _embedded?: {
+        'wp:term'?: Taxonomy[][];
+    };
+    'project-category'?: number[];
+}

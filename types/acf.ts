@@ -65,8 +65,11 @@ export interface ACFOptionsLogo {
 
 export interface ACFContactSectionData {
     title: string;
+    title_en: string;
     subtitle: string;
+    subtitle_en: string;
     text: string;
+    text_en: string;
     background_image: ACFImage;
 }
 

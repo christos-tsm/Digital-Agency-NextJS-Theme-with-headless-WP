@@ -119,7 +119,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
             {/* Interested For */}
             <div className="flex flex-col gap-2">
                 <label htmlFor="interested-for" className="text-sm font-medium">
-                    Ενδιαφέρομαι για: *
+                    {locale === 'el' ? 'Ενδιαφέρομαι για: *' : 'Interested for: *'}
                 </label>
                 <div className={`px-3 py-2 border rounded ${fieldErrors['interested-for'] ? 'border-red-400' : 'border-gray-200'}`}>
                     <select
@@ -130,11 +130,11 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
                         required
                         className={`w-full text-sm font-medium cursor-pointer outline-0! border-none`}
                     >
-                        <option value="">Επιλέξτε...</option>
-                        <option value="Εταιρική Ιστοσελίδα">Εταιρική Ιστοσελίδα</option>
+                        <option value="">Select...</option>
+                        <option value="Corporate Website">Corporate Website</option>
                         <option value="E-Commerce">E-Commerce</option>
-                        <option value="Custom Web Εφαρμογή">Custom Web Εφαρμογή</option>
-                        <option value="Συντήρηση & Υποστήρηξη">Συντήρηση & Υποστήρηξη</option>
+                        <option value="Custom Web Application">Custom Web Application</option>
+                        <option value="Maintenance & Support">Maintenance & Support</option>
                     </select>
                 </div>
 
@@ -146,7 +146,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
             {/* Name */}
             <div className="flex flex-col gap-2">
                 <label htmlFor="your-name" className="text-sm font-medium">
-                    Όνομα *
+                    {locale === 'el' ? 'Όνομα: *' : 'Name: *'}
                 </label>
                 <input
                     type="text"
@@ -186,7 +186,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
             {/* Phone */}
             <div className="flex flex-col gap-2">
                 <label htmlFor="your-tel" className="text-sm font-medium">
-                    Τηλέφωνο
+                    {locale === 'el' ? 'Τηλέφωνο:' : 'Phone:'}
                 </label>
                 <input
                     type="tel"
@@ -205,7 +205,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
             {/* Message */}
             <div className="flex flex-col gap-2">
                 <label htmlFor="your-message" className="text-sm font-medium">
-                    Μήνυμα *
+                    {locale === 'el' ? 'Μήνυμα:' : 'Message:'}
                 </label>
                 <textarea
                     id="your-message"
@@ -233,7 +233,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
                         required
                         className="accent-primary outline-0!"
                     />
-                    <span>Αποδέχομαι τους όρους χρήσης *</span>
+                    <span>{locale === 'el' ? 'Έχω διαβάσει και συμφωνώ με την Πολιτική Απορρήτου & τους όρους χρήσης' : 'I have read and agree to the Privacy Policy & Terms of Use'}</span>
                 </label>
                 {fieldErrors['your-acceptance'] && (
                     <p className="text-red-500 text-xs font-medium">{fieldErrors['your-acceptance']}</p>
@@ -258,7 +258,10 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
                 disabled={loading}
                 className="w-full px-4 py-2 bg-primary text-white rounded hover:bg-primary-darken disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
             >
-                {loading ? 'Αποστολή...' : 'Αποστολή'}
+                {loading
+                    ? (locale === 'el' ? 'Αποστολή...' : 'Sending...')
+                    : (locale === 'el' ? 'Αποστολή' : 'Send')
+                }
             </button>
         </form>
     );

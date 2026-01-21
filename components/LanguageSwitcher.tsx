@@ -12,20 +12,37 @@ interface LanguageSwitcherProps {
 
 export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
     const pathname = usePathname();
-
-    // Remove current locale from pathname to get base path
-    // /el/about -> /about, /en/about -> /about
     const basePath = pathname.replace(/^\/(el|en)/, '') || '/';
 
     return (
         <div className="flex gap-2">
             {locales.map((locale) => {
                 const isActive = locale === currentLocale;
-                // Greek (el) uses root path, English uses /en/ prefix
-                const href = locale === 'el' ? basePath : `/en/${basePath}`;
+                if (isActive) return null;
+
+                let href = `/${locale}${basePath}`;
+
+                // Αν είμαστε σε project page, μετατρέπουμε το slug
+                if (basePath.startsWith('/projects/')) {
+                    const slugMatch = basePath.match(/^\/projects\/(.+)$/);
+                    if (slugMatch) {
+                        const slug = slugMatch[1];
+
+                        if (locale === 'en') {
+                            // Προσθέτουμε -en στο τέλος αν δεν υπάρχει ήδη
+                            if (!slug.endsWith('-en')) {
+                                href = `/en/projects/${slug}-en`;
+                            }
+                        } else {
+                            // Αφαιρούμε -en από το τέλος αν υπάρχει
+                            if (slug.endsWith('-en')) {
+                                href = `/el/projects/${slug.replace(/-en$/, '')}`;
+                            }
+                        }
+                    }
+                }
 
                 return (
-                    !isActive &&
                     <Link href={href} key={locale} className="flex items-center gap-1 text-sm font-bold text-white hover:text-primary transition-colors duration-300">
                         <Globe />
                         {getLocaleName(locale)}

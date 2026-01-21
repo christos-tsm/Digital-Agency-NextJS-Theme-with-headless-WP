@@ -84,6 +84,11 @@ export async function getPageWithACF(slug: string) {
     });
 }
 
+export async function getCPT(slug: string, cpt: string) {
+    const results = await fetchAPI(`${cpt}?slug=${slug}&_embed`);
+    return results[0] || null;
+}
+
 // Bonus: Get specific options page
 export async function getSpecificOptionsPage(pageName: string) {
     return fetchCustomAPI(`options/${pageName}`, {
