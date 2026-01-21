@@ -224,14 +224,14 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
 
             {/* Acceptance */}
             <div className="flex flex-col gap-2">
-                <label className="flex items-center gap-1 leading-1 text-sm font-medium cursor-pointer">
+                <label className="flex items-start gap-1 text-sm font-medium cursor-pointer">
                     <input
                         type="checkbox"
                         name="your-acceptance"
                         checked={formData['your-acceptance'] === '1'}
                         onChange={handleChange}
                         required
-                        className="accent-primary outline-0!"
+                        className="accent-primary mt-[3px] outline-0!"
                     />
                     <span>{locale === 'el' ? 'Έχω διαβάσει και συμφωνώ με την Πολιτική Απορρήτου & τους όρους χρήσης' : 'I have read and agree to the Privacy Policy & Terms of Use'}</span>
                 </label>
