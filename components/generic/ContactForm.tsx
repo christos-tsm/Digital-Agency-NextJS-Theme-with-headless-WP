@@ -130,7 +130,7 @@ export default function ContactForm({ locale = 'el' }: ContactFormProps) {
                         required
                         className={`w-full text-sm font-medium cursor-pointer outline-0! border-none`}
                     >
-                        <option value="">Select...</option>
+                        <option value="">{locale === 'el' ? 'Επιλέξτε...' : 'Select...'}</option>
                         <option value="Corporate Website">Corporate Website</option>
                         <option value="E-Commerce">E-Commerce</option>
                         <option value="Custom Web Application">Custom Web Application</option>
