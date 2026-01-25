@@ -155,3 +155,24 @@ export interface ProjectSinglePageDataInterface {
     };
     'project-category'?: number[];
 }
+
+export interface ServicesSinglePageDataInterface {
+    slug: string;
+    acf: {
+        hero_section: DefaultHeroSectionData;
+        icon: ACFFile;
+        short_description: string;
+        long_description: string;
+        image?: ACFImage;
+        marquee_text?: string;
+    };
+    yoast_head_json?: {
+        title?: string;
+        description?: string;
+        og_title?: string;
+        og_description?: string;
+        og_image?: Array<{ url?: string; width?: number; height?: number }>;
+        twitter_card?: string;
+        canonical?: string;
+    };
+}

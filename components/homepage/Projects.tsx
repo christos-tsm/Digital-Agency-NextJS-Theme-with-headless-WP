@@ -10,7 +10,6 @@ interface ProjectsSectionInterface {
 }
 
 const Projects = ({ content }: ProjectsSectionInterface) => {
-    // console.log(content);
 
     return (
         <section className="relative overflow-hidden mt-10 xl:mt-20 bg-foreground py-10 xl:py-20">

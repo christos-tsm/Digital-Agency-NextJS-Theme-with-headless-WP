@@ -42,6 +42,25 @@ export default function LanguageSwitcher({ currentLocale }: LanguageSwitcherProp
                     }
                 }
 
+                if (basePath.startsWith('/services/')) {
+                    const slugMatch = basePath.match(/^\/services\/(.+)$/);
+                    if (slugMatch) {
+                        const slug = slugMatch[1];
+
+                        if (locale === 'en') {
+                            // Προσθέτουμε -en στο τέλος αν δεν υπάρχει ήδη
+                            if (!slug.endsWith('-en')) {
+                                href = `/en/services/${slug}-en`;
+                            }
+                        } else {
+                            // Αφαιρούμε -en από το τέλος αν υπάρχει
+                            if (slug.endsWith('-en')) {
+                                href = `/el/services/${slug.replace(/-en$/, '')}`;
+                            }
+                        }
+                    }
+                }
+
                 return (
                     <Link href={href} key={locale} className="flex items-center gap-1 text-sm font-bold text-white hover:text-primary transition-colors duration-300">
                         <Globe />

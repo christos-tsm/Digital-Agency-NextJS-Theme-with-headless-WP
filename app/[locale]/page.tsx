@@ -26,6 +26,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
     const { acf: { hero, marquee_text, about_us, banner, services, projects } } = pageData;
 
+    console.log(services);
 
     return (
         <LocomotiveScrollWrapper>

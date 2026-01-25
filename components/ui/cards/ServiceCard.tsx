@@ -22,7 +22,7 @@ const ServiceCard = ({ service, locale, variation }: ServiceCardInterface) => {
     }
     return (
         <article id="service-<?= get_the_ID() ?>" className={`px-5 py-5 group rounded-xl relative ${containerClassNames}`}>
-            <Link href={`/services/${service.post_name}`} aria-label={`Read more about ${service.post_title}`} className="absolute top-0 left-0 w-full h-full z-2"></Link>
+            <Link href={`/${locale}/services/${service.post_name}`} aria-label={`Read more about ${service.post_title}`} className="absolute top-0 left-0 w-full h-full z-2"></Link>
             <div className={`flex flex-col ${!iconOnTop && 'lg:flex-row'} gap-5 h-full`}>
                 <div className="flex-1 w-20 h-20 max-h-20">
                     <div className="bg-primary rounded-xl inline-flex items-center justify-center w-20 h-20">
