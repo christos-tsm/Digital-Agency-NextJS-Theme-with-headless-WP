@@ -58,7 +58,7 @@ const Footer = async ({ locale }: { locale: Locale }) => {
                         </div>
                     </div>
                     <div className="container mx-auto mt-10 lg:mt-20">
-                        <p className="text-sm">&copy; {new Date().getFullYear()} Rights Reseved | Mediamind</p>
+                        <p className="text-sm">&copy; {new Date().getFullYear()} Rights Reseved | <strong>mediacore.gr</strong></p>
                     </div>
                 </div>
             </footer>

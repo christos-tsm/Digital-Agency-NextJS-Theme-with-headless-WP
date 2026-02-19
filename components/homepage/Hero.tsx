@@ -4,10 +4,8 @@ import { sanitizeHTML } from "@/lib/utils/sanitize-html";
 import { HeroSectionData } from "@/types/pageData";
 import { Play } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import PrimaryCTA from "../ui/PrimaryCTA";
-import { LinkHTMLAttributes, useState, useRef, useEffect } from "react";
-import { NodeEventTarget } from "events";
+import { useState, useRef, useEffect } from "react";
 
 interface HeroSectionInterface {
     content: HeroSectionData;
@@ -36,7 +34,7 @@ const Hero = ({ content }: HeroSectionInterface) => {
     return (
         <>
             <section className="bg-foreground relative text-white">
-                <div className="flex md:min-h-[800px] lg:min-h-auto h-screen max-h-[720px] 3xl:max-h-[880px]">
+                <div className="flex md:min-h-[800px] lg:min-h-auto h-screen xl:h-[calc(100vh-70px)] max-h-[720px] 3xl:max-h-[880px]">
                     <Image fill alt={content.image.alt} src={content.image.url} loading="eager" className="w-full h-auto object-cover" fetchPriority="high" />
                 </div>
                 <div className="absolute bottom-10 left-0 lg:bottom-auto lg:top-1/2 lg:left-1/2 lg:-translate-1/2 z-2 container flex flex-col gap-5 lg:max-w-fit">
