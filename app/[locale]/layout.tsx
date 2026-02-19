@@ -39,16 +39,16 @@ export default async function LocaleLayout({ children, params, }: Readonly<{ chi
     }
     return (
         <html lang={locale} className={`${manrope.variable} ${titillium.variable} overflow-hidden`}>
-            {/* Coming Soon Banner with overflow hidden */}
+            {/* Coming Soon Banner @TODO Remove overflow hidden from <html> */}
             <body className="antialiased">
-                {/* Comming Soon Banner */}
-                <div className="text-white fixed flex flex-col gap-10 items-center justify-center top-0 left-0 w-full h-full bg-foreground z-50">
-                    <h1 className="text-3xl md:text-5xl font-bold">coming<span className="text-primary">soon.</span></h1>
-                    <p className="text-5xl md:text-7xl font-bold">media<span className="text-primary">core.</span></p>
-                    <p className="text-xl md:text-2xl font-light">creative<span className="text-primary">digital</span>agency</p>
-                </div>
                 <Providers>
                     <Header locale={locale as "en" | "el"} />
+                    {/* Comming Soon Banner */}
+                    <div className="text-white fixed flex flex-col gap-10 items-center justify-center top-0 left-0 w-full h-full bg-foreground z-50">
+                        <h1 className="text-3xl md:text-5xl font-bold">coming<span className="text-primary">soon.</span></h1>
+                        <p className="text-5xl md:text-7xl font-bold">media<span className="text-primary">core.</span></p>
+                        <p className="text-xl md:text-2xl font-light">creative<span className="text-primary">digital</span>agency</p>
+                    </div>
                     {children}
                     <Footer locale={locale as "en" | "el"} />
                 </Providers>
