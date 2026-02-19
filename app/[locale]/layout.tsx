@@ -38,9 +38,9 @@ export default async function LocaleLayout({ children, params, }: Readonly<{ chi
         notFound();
     }
     return (
-        <html lang={locale} className={`${manrope.variable} ${titillium.variable}`}>
+        <html lang={locale} className={`${manrope.variable} ${titillium.variable} overflow-hidden`}>
             {/* Coming Soon Banner with overflow hidden */}
-            <body className="antialiased overflow-hidden">
+            <body className="antialiased">
                 {/* Comming Soon Banner */}
                 <div className="text-white fixed flex flex-col gap-10 items-center justify-center top-0 left-0 w-full h-full bg-foreground z-50">
                     <h1 className="text-3xl md:text-5xl font-bold">coming<span className="text-primary">soon.</span></h1>
